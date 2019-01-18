@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Configure a new lamp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card padding>
+    <ion-item>
+      <ion-label>SSID</ion-label>
+      <ion-input [(ngModel)]="network.ssid"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>BSSID</ion-label>
+      <ion-input [(ngModel)]="network.bssid"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Passphrase</ion-label>
+      <ion-input [(ngModel)]="network.passphrase"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hidden</ion-label>
+      <ion-checkbox [(ngModel)]="network.hidden"></ion-checkbox>
+    </ion-item>
+    <ion-button  expand="block" 
+    [disabled]="!(network.passphrase && network.bssid && network.ssid)" (click)="configure()">Configure</ion-button>
+  </ion-card>
+</ion-content>

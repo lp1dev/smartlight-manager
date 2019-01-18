@@ -1,0 +1,30 @@
+<ion-content>
+  <ion-card *ngIf="lamp && lamp.information" padding>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input [(ngModel)]="lamp.information.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Group</ion-label>
+      <ion-select [(ngModel)]="lamp.information.groupName">
+        <ion-select-option value="Group1">Group1</ion-select-option>
+        <ion-select-option value="Group2">Group2</ion-select-option>
+        <ion-select-option value="Group3">Group3</ion-select-option>
+        <ion-select-option value="Group4">Group4</ion-select-option>
+        <ion-select-option value="Group5">Group5</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Room</ion-label>
+      <ion-select [(ngModel)]="lamp.information.roomId">
+        <ion-select-option value="1">Living Room</ion-select-option>
+        <ion-select-option value="2">Bedroom</ion-select-option>
+        <ion-select-option value="3">Kitchen</ion-select-option>
+        <ion-select-option value="4">Bathroom</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button (click)="cancel()" expand="full">Cancel</ion-button>
+    <ion-button (click)="save()" expand="full">Save</ion-button>
+  </ion-card>
+
+</ion-content>

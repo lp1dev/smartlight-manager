@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { HeartbeatService } from './lamps/heartbeat/heartbeat.service';
 
 @Component({
   selector: 'app-root',
@@ -13,19 +14,15 @@ export class AppComponent {
     {
       title: 'Home',
       url: '/home',
-      icon: 'home'
-    },
-    {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      icon: 'bulb'
     }
   ];
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private heartbeatService: HeartbeatService
   ) {
     this.initializeApp();
   }
@@ -34,6 +31,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      // this.heartbeatService.start();
     });
   }
 }

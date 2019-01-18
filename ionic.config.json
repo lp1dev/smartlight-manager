@@ -1,5 +1,7 @@
 {
   "name": "iHomhack",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

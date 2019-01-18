@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lamp Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Lamp info -->
+<ion-content padding>
+  <ion-card padding *ngIf="lamp">
+    <ion-card-title color="primary">{{lamp.information?.name}}</ion-card-title>
+    <ion-card-content>
+      <ion-label>
+        <h2>{{ lamp.mac }}</h2>
+        <h2>{{ lamp.ip }} <ion-icon [color]="lamp.connected ? 'success' : 'danger'" name="bulb"></ion-icon>
+        </h2>
+        <h2>Connected to: {{lamp.network}}</h2>
+      </ion-label>
+      <ion-label *ngIf="lamp.information">
+        <h2>Group: {{lamp.information.groupName}}</h2>
+        <h2>Room: {{lamp.information.roomId}}</h2>
+      </ion-label>
+      <ion-button (click)="setPower(false)">
+        Turn OFF
+      </ion-button>
+      <ion-button (click)="setPower(true)">
+        Turn ON
+      </ion-button>
+      <!-- <ion-button (click)="edit(true)">
+        Edit
+      </ion-button> -->
+    </ion-card-content>
+  </ion-card>
+  <!-- Presets -->
+  <ion-card padding>
+    <ion-card-title color="primary">Presets</ion-card-title>
+    <ion-item-divider margin-top>
+      <ion-label>Static Presets</ion-label>
+    </ion-item-divider>
+    <ion-card-content>
+      <ion-item-group>
+        <button *ngFor="let preset of staticPresets" class="customButton" [style.background-color]="preset.color"
+          (click)="setLightPreset(preset.id)">{{preset.name}}</button>
+      </ion-item-group>
+    </ion-card-content>
+
+    <ion-item-divider>
+      <ion-label>Animated Presets</ion-label>
+    </ion-item-divider>
+
+    <ion-card-content>
+      <ion-item-group>
+        <button expand="block" *ngFor="let preset of animatedPresets" (click)="setLightPreset(preset.id)" class="customButton animated"
+          [style.background-image]="buildGradient(preset.colors)">
+          &nbsp;
+        </button>
+      </ion-item-group>
+    </ion-card-content>
+  </ion-card>
+  <!-- RGB Custom Color -->
+  <ion-card padding>
+    <ion-card-title color="primary">RGB Color</ion-card-title>
+    <ion-card-content>
+      <ion-item>
+        <ion-range [min]="range.min" [max]="range.max" #rangeRed (ionChange)="onRGBChange('r', rangeRed.value)">
+          <ion-icon slot="start" name="color-palette" color="dark"></ion-icon>
+          <ion-icon slot="end" name="color-palette" color="danger"></ion-icon>
+        </ion-range>
+      </ion-item>
+      <ion-item>
+        <ion-range [min]="range.min" [max]="range.max" #rangeGreen (ionChange)="onRGBChange('g', rangeGreen.value)">
+          <ion-icon slot="start" name="color-palette" color="dark"></ion-icon>
+          <ion-icon slot="end" name="color-palette" color="success"></ion-icon>
+        </ion-range>
+      </ion-item>
+      <ion-item>
+        <ion-range [min]="range.min" [max]="range.max" #rangeBlue (ionChange)="onRGBChange('b', rangeBlue.value)">
+          <ion-icon slot="start" name="color-palette" color="dark"></ion-icon>
+          <ion-icon slot="end" name="color-palette" color="secondary"></ion-icon>
+        </ion-range>
+      </ion-item>
+      <button class="customButton" [style.background-color]="rgbColorStr" (click)="setRGBColor()" expand="full">Set
+        Color</button>
+    </ion-card-content>
+  </ion-card>
+  <!-- Brightness Control -->
+  <ion-card padding>
+    <ion-card-title color="primary">Brightness Control</ion-card-title>
+    <ion-card-content>
+      <ion-label>Luminance</ion-label>
+      <ion-item>
+        <ion-range #luminanceRange min="0" max="200" (ionChange)="setBrightness('luminance', luminanceRange.value)">
+          <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+          <ion-icon slot="end" name="sunny"></ion-icon>
+        </ion-range>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <!--  -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" (click)="delete()">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

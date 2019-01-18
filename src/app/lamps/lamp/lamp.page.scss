@@ -1,0 +1,18 @@
+.customButton {
+    width: 100%;
+    padding: 1.1em 0;
+    margin: 4px 2px;
+    letter-spacing: .06em;
+    border-radius: .2em;
+    text-transform: uppercase;
+    box-shadow: 1px 3px 3px #0000004d;
+    font-size: 14px;
+}
+.customButton:focus {
+    border: none;
+    outline: none;
+}
+.animated {
+    border: none;
+    border-radius: 0;
+}
