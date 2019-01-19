@@ -63,7 +63,11 @@ export class ConfigurePage implements OnInit {
           }
           this.dismissLoading();
         })
-        .catch(e => alert(e));
+        .catch(e => {
+          alert(e);
+          this.location.back();
+          this.dismissLoading();
+        });
       });
   }
 

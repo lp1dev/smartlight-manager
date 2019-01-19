@@ -11,8 +11,11 @@
 
 <ion-content padding>
   <ion-card padding *ngIf="!lampsService.lamps || !lampsService.lamps.length">
-    <h1>No lamp configured</h1>
-    <ion-button expand="block" (click)="configure()">Configure</ion-button>
+    <ion-card-title color="primary">
+        No smart device configured
+    </ion-card-title>
+    <ion-button expand="block" (click)="configure()">Pair a new Smart Light</ion-button>
+    <ion-button expand="block" (click)="router.navigate(['discover'])">Discover network devices</ion-button>
   </ion-card>
 
   <ion-card padding *ngFor="let lamp of lampsService.lamps" (click)="openLamp(lamp)">

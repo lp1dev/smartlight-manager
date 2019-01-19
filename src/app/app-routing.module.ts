@@ -16,7 +16,8 @@ const routes: Routes = [
     loadChildren: './list/list.module#ListPageModule'
   },
   { path: 'configure', loadChildren: './lamps/configure/configure.module#ConfigurePageModule' },
-  { path: 'lamp/:mac', loadChildren: './lamps/lamp/lamp.module#LampPageModule' }
+  { path: 'lamp/:mac', loadChildren: './lamps/lamp/lamp.module#LampPageModule' },
+  { path: 'discover', loadChildren: './discover/discover.module#DiscoverPageModule' }
 ];
 
 @NgModule({
