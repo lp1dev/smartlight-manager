@@ -1,9 +1,9 @@
 # SmartLight Manager
 
-  Unofficial iHomma Smart Light Manager
+Unofficial iHomma Smart Light Manager
 
-  This is a free (GPLv3), open source replacement for the iHomma HCS Android app (which has now been removed from the store).
-  It's a work in progress and does not implements 100% of the smart light's features but it allows to easily control your devices across your network.
+> This is a free (GPLv3), open source replacement for the iHomma HCS Android app (which has now been removed from the store).
+> It's a work in progress and does not implements 100% of the smart light's features but it allows to easily control your devices across your network.
   
 # Technologies Used
 
