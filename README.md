@@ -37,7 +37,14 @@ At the moment you have to :
 
 `# ionic cordova build [android|ios]`
 
-#### Notes
+# Todo
+
+- [ ] screenshots
+- [ ] upload on F-Droid
+- [ ] upload on Google Play Store
+- [ ] Add the missing features
+
+# Notes
 
 I am going to post the app to F-droid and Google Play Store **ASAP** now that the official client has disappeared, which means that people might actually need it soon.
 
