@@ -31,7 +31,7 @@ At the moment you have to :
 
 #### Install the dependencies
 
-`# cd smartlight-manager && npm install -g ionic cordova`
+`# cd smartlight-manager && npm install -g ionic cordova && npm install`
 
 #### Build it for your platform
 
