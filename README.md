@@ -39,7 +39,7 @@ At the moment you have to :
 
 #### Notes
 
-I am going to post the app to F-droid and Google Play Store **ASAP** now that the official client has disappeared since people might actually need it soon.
+I am going to post the app to F-droid and Google Play Store **ASAP** now that the official client has disappeared, which means that people might actually need it soon.
 
 # Licence
 This project is using a GPLv3 licence that you can read in the LICENCE file.
